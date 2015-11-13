@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R1K-02-dod">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="NFc-Ej-5Rq">
+            <objects>
+                <viewController id="Rea-8k-vRX" customClass="DetailViewController" customModule="Places_Of_interest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OcV-g9-48r"/>
+                        <viewControllerLayoutGuide type="bottom" id="gKJ-Pl-m7L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a40-cL-HzS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QuM-cy-7of">
+                                <rect key="frame" x="266" y="28" width="314" height="276"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oak-3z-G3v">
+                                        <rect key="frame" x="8" y="8" width="298" height="239"/>
+                                        <animations/>
+                                    </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXp-Ky-cdT">
+                                        <rect key="frame" x="8" y="246" width="63" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Standard"/>
+                                        <connections>
+                                            <action selector="changeMapType:" destination="raR-Fm-z9f" eventType="touchUpInside" id="xNw-4Q-g0v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3T-4P-OAh">
+                                        <rect key="frame" x="260" y="246" width="46" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Hybrid"/>
+                                        <connections>
+                                            <action selector="changeMapType:" destination="raR-Fm-z9f" eventType="touchUpInside" id="cdJ-lg-hFh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKv-fc-BM7">
+                                        <rect key="frame" x="130" y="246" width="55" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Satellite"/>
+                                        <connections>
+                                            <action selector="changeMapType:" destination="raR-Fm-z9f" eventType="touchUpInside" id="lTC-5F-Muf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapViewController" destination="raR-Fm-z9f" id="rlV-xN-2gj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CBA-Ct-5Hp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="raR-Fm-z9f" customClass="MapViewController" customModule="Places_Of_interest" customModuleProvider="target">
+                    <connections>
+                        <outlet property="mapView" destination="oak-3z-G3v" id="4gg-Rn-aqW"/>
+                        <outlet property="view" destination="QuM-cy-7of" id="cue-hj-IG1"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="711" y="573"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="05Z-at-luQ">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="S5S-Cd-cZr" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="d97-cZ-hPt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="WVa-hA-5Re">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WVa-hA-5Re" id="tM9-kI-d8f">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="S5S-Cd-cZr" id="uYR-Ju-ggA"/>
+                            <outlet property="delegate" destination="S5S-Cd-cZr" id="8Fg-Zm-z6C"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="TZN-Ej-IDL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dtR-vd-CL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1531" y="-88"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DTC-3R-ssa">
+            <objects>
+                <navigationController id="9fL-Y5-rWB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e6k-cr-Hcg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="S5S-Cd-cZr" kind="relationship" relationship="rootViewController" id="ey6-RQ-HfS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lXO-np-WOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="711" y="-88"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="SJF-lS-dgy">
+            <objects>
+                <splitViewController id="R1K-02-dod" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="9fL-Y5-rWB" kind="relationship" relationship="masterViewController" id="q9O-eP-zj7"/>
+                        <segue destination="Rea-8k-vRX" kind="relationship" relationship="detailViewController" id="yX3-x9-ZyG"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lAD-V8-sBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-109" y="243"/>
+        </scene>
+    </scenes>
+</document>
