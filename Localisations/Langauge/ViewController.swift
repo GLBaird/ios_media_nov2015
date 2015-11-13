@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        let info = NSLocalizedString("Wow, what a thing!!", comment: "Get this done now!")
+        print(info)
+        
         label.text = NSLocalizedString("Hi there from me!", comment: "Main greeting")
         
         label.text = NSLocalizedString("Hi there from me!", comment: "Evil greeting")
